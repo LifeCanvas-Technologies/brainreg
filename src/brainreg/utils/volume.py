@@ -143,7 +143,7 @@ def calculate_volumes(
         "right_volume_mm3",
         "total_volume_mm3",
     )
-    for atlas_value in unique_vals_left:
+    for atlas_value in list(unique_vals_left)+list(unique_vals_right):
         if atlas_value != 0:  # outside brain
             try:
                 df = add_structure_volume_to_df(
